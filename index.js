@@ -65,7 +65,7 @@ const Movie = mongoose.model("Movie", movieSchema);
 //     console.log(err);
 //   });
 
-Movie.findByIdAndRemove("67113ea90bf70a7f0a30d46f")
+Movie.findByIdAndDelete("67113ea90bf70a7f0a30d470")
   .then((result) => {
     console.log(result);
   })
