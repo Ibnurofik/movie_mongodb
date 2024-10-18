@@ -44,13 +44,30 @@ const Movie = mongoose.model("Movie", movieSchema);
 //     console.log(err);
 //   });
 
-Movie.findByIdAndUpdate(
-  "67113e963d0435b8f21290d9",
-  { rating: 10 },
-  { new: true }
-)
+// Movie.findByIdAndUpdate(
+//   "67113e963d0435b8f21290d9",
+//   { rating: 10 },
+//   { new: true }
+// )
+//   .then((result) => {
+//     consol.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+//Delete
+// Movie.deleteOne({ title: "Black Panther" })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+Movie.findByIdAndRemove("67113ea90bf70a7f0a30d46f")
   .then((result) => {
-    consol.log(result);
+    console.log(result);
   })
   .catch((err) => {
     console.log(err);
