@@ -27,9 +27,30 @@ const Movie = mongoose.model("Movie", movieSchema);
 //     console.log(err);
 //   });
 
-Movie.findById("67113eb6033c9c8d5003a1dd")
+// Movie.findById("67113eb6033c9c8d5003a1dd")
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+//Update One
+// Movie.updateMany({ year: { $lt: 2019 } }, { rating: 8.0 })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+Movie.findByIdAndUpdate(
+  "67113e963d0435b8f21290d9",
+  { rating: 10 },
+  { new: true }
+)
   .then((result) => {
-    console.log(result);
+    consol.log(result);
   })
   .catch((err) => {
     console.log(err);
