@@ -67,6 +67,17 @@ productSchema.methods.outStock = function () {
   return this.save();
 };
 
+productSchema.statics.closeStore = function () {
+  return this.updateMany(
+    {},
+    {
+      stock: 0,
+      "availability.online": false,
+      "availability.offline": false,
+    }
+  );
+};
+
 const Product = mongoose.model("Product", productSchema);
 
 const changeStock = async (id) => {
@@ -75,7 +86,14 @@ const changeStock = async (id) => {
   console.log("Berhasil diubah");
 };
 
-changeStock("6713271a42bdf5cf2188edcd");
+Product.closeStore()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+// changeStock("6713271a42bdf5cf2188edcd");
 // const product = new Product({
 //   name: "Kemeja Flanel",
 //   brand: "Hollister",
