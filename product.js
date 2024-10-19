@@ -62,8 +62,8 @@ const productSchema = mongoose.Schema({
 
 productSchema.methods.outStock = function () {
   this.stock = 0;
-  this.availability.online=false,
-  this.availability.offline=false,
+  this.availability.online = false;
+  this.availability.offline = false;
   return this.save();
 };
 
@@ -75,7 +75,7 @@ const changeStock = async (id) => {
   console.log("Berhasil diubah");
 };
 
-changeStock('6713271a42bdf5cf2188edcd')
+changeStock("6713271a42bdf5cf2188edcd");
 // const product = new Product({
 //   name: "Kemeja Flanel",
 //   brand: "Hollister",
